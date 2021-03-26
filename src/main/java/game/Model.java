@@ -1,9 +1,6 @@
 package game;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class Model {
 //    класс содержит игровую логику и хранит игровое поле.
@@ -45,6 +42,22 @@ public class Model {
         }
         return false;
 
+    }
+
+    public void  autoMove(){
+//        метод autoMove в классе Model будет выбирать лучший из возможных ходов и выполнять его.
+
+//        Comparator<Object> objectComparator  = Collections.reverseOrder();
+        PriorityQueue<MoveEfficiency> moveEfficiencies = new PriorityQueue<>(4, Collections.reverseOrder());
+
+//        moveEfficiencies.add(new MoveEfficiency())
+
+        moveEfficiencies.offer(getMoveEfficiency(this::left));
+        moveEfficiencies.offer(getMoveEfficiency(this::up));
+        moveEfficiencies.offer(getMoveEfficiency(this::right));
+        moveEfficiencies.offer(getMoveEfficiency(this::down));
+
+        moveEfficiencies.peek().getMove().move();
     }
 
 
