@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class View extends JPanel {
+    //был реализован сайтом
+    // Наследуемся от класса JPanel, переопределяем метод paint и выводим на
+    // экран текущее состояние модели, полученное через контроллер.
     private static final Color BG_COLOR = new Color(0xbbada0);
     private static final String FONT_NAME = "Arial";
     private static final int TILE_SIZE = 96;
