@@ -55,6 +55,12 @@ public class Controller extends KeyAdapter {
                 case KeyEvent.VK_ESCAPE:
                     resetGame();
                     break;
+                case KeyEvent.VK_Z:
+                    model.rollback();
+                    break;
+                case KeyEvent.VK_R:
+                    model.randomMove();
+                    break;
             }
         }
         if (model.maxTile == WINNING_TILE) {
